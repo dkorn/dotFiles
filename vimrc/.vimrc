@@ -148,6 +148,7 @@ set expandtab     " Use spaces instead of tabs
 set pastetoggle=<F2> " For pasting text without indentation
 
 " Display tabs and trailing spaces visually
+"set list listchars=tab:\ \ ,trail:Â·
 set listchars=tab:✗\ ,trail:✗,extends:»,precedes:« " Unprintable chars mapping
 
 set wrap          " Wrap lines
@@ -241,11 +242,11 @@ colorscheme solarized
 color solarized
 
 " =============== NERDTree Mappins =====================
-" Open Nerd Tree with <Leader>n
-map <Leader>n <esc>:NERDTreeToggle<cr>
+" Open Nerd Tree with Ctrl+n
+map <C-n> :NERDTreeToggle<CR>
 
-" Reveal current file in NERDTree with <Leader>r
-map <Leader>r <esc>:NERDTreeFind<cr>
+" Reveal current file in NERDTree with Ctrl+r
+map <C-r> :NERDTreeFind<CR>
 
 " Autoload NERDTree if no file specified
 
@@ -254,7 +255,7 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 " Auto close NERDTree if no more files
 
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " Show hidden files in NERDTree
 
@@ -275,6 +276,11 @@ let NERDTreeShowHidden=1
 "set pastetoggle=<F10>
 "inoremap <C-v> <F10><C-r>+<F10>
 
+"==================== my plugin configs ===================
+
+set statusline+=%#warningmsg#
+set statusline+=%{ALEGetStatusLine()}
+set statusline+=%*
 
 " ===== SYNTASTIC - commented out for ale 
 "mark syntax errors with :signs
