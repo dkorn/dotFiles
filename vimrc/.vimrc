@@ -2,6 +2,12 @@
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
+" Change leader to a comma because the backslash is too far away
+" That means all \x commands turn into ,x
+" The mapleader has to be set before vim-plug starts loading all 
+" the plugins.
+let mapleader=","
+
 " ========================================
 " Vim plug configuration
 " ========================================
@@ -15,6 +21,8 @@ Plug 'easymotion/vim-easymotion'
 Plug 'tpope/vim-surround'
 " Ruby:
 Plug 'vim-ruby/vim-ruby'
+" ctrlp:
+Plug 'ctrlpvim/ctrlp.vim'
 " Tagbar:
 Plug 'majutsushi/tagbar'
 " Completion:
@@ -48,6 +56,8 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'ternjs/tern_for_vim'
 " Javascript:
 Plug 'pangloss/vim-javascript'
+Plug 'jelera/vim-javascript-syntax'
+Plug 'Raimondi/delimitMate'
 " Indent Guid:
 Plug 'nathanaelkane/vim-indent-guides'
 " SemanticHighlight:
@@ -114,11 +124,6 @@ set hidden
 "turn on syntax highlighting
 syntax on
 
-" Change leader to a comma because the backslash is too far away
-" That means all \x commands turn into ,x
-" The mapleader has to be set before vundle starts loading all 
-" the plugins.
-let mapleader=","
 
 " ================ Turn Off Swap Files ==============
 
@@ -236,6 +241,7 @@ set sidescroll=1
 
 
 " Color theme (drawing from altercation/vim-colors-solarized Bundle)
+set t_Co=256
 syntax enable
 set background=dark
 colorscheme solarized
@@ -326,6 +332,10 @@ map <Leader>tt <esc>:TagbarToggle<cr>
 " map <C-\>:tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 "map <A-]>:vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 
+let g:tern_show_argument_hints='on_hold'
+let g:tern_map_keys=1
+
+imap <C-c> <CR><Esc>O
 " Support for github flavored markdown
 " via https://github.com/jtratner/vim-flavored-markdown
 " with .md extensions
