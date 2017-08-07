@@ -4,7 +4,7 @@ set nocompatible
 
 " Change leader to a comma because the backslash is too far away
 " That means all \x commands turn into ,x
-" The mapleader has to be set before vim-plug starts loading all 
+" The mapleader has to be set before vim-plug starts loading all
 " the plugins.
 let mapleader=","
 
@@ -252,7 +252,7 @@ color solarized
 map <C-n> :NERDTreeToggle<CR>
 
 " Reveal current file in NERDTree with Ctrl+r
-map <C-r> :NERDTreeFind<CR>
+map <C-f> :NERDTreeFind<CR>
 
 " Autoload NERDTree if no file specified
 
