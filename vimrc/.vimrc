@@ -88,6 +88,8 @@ Plug 'moll/vim-node', { 'for' : ['javascript', 'json', 'markdown'] }
 Plug 'isRuslan/vim-es6', { 'for' : ['javascript', 'json', 'markdown'] }
 " NERDTree:
 Plug 'scrooloose/nerdtree'
+" NerdTree Commenter:
+Plug 'scrooloose/nerdcommenter'
 
 call plug#end()
 
