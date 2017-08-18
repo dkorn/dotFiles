@@ -272,8 +272,9 @@ let NERDTreeShowHidden=1
 ""==================== clipboard ==========================
 " enable copy to clipboard - commented out
 
-"set clipboard=unnamed
-
+if $TMUX == ''
+    set clipboard+=unnamed
+endif
 " copy to clipboard with Ctrl-C
 
 "map <C-x> :!pbcopy<CR>
