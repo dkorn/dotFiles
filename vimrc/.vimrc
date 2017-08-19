@@ -158,7 +158,7 @@ set pastetoggle=<F2> " For pasting text without indentation
 "set list listchars=tab:\ \ ,trail:Â·
 set listchars=tab:✗\ ,trail:✗,extends:»,precedes:« " Unprintable chars mapping
 
-set wrap          " Wrap lines
+set nowrap        " No wraping of long lines
 set linebreak     " Wrap lines at convenient points
 set showbreak=+++ " Wrap-broken line prefix
 set textwidth=100 " Line wrap (number of cols)
