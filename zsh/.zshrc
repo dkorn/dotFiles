@@ -10,6 +10,7 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/danielkorn/.oh-my-zsh
 
+POWERLEVEL9K_INSTALLATION_PATH="/Users/danielkorn/.oh-my-zsh/custom/themes/powerlevel9k"
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
@@ -104,6 +105,7 @@ precmd() {
 
 # view man pages in Preview
 # pman() { ps=`mktemp -t manpageXXXX`.ps ; man -t $@ > "$ps" ; open "$ps" ; }
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
