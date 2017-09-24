@@ -99,6 +99,7 @@ call plug#end()
 
 " ================ General Config ====================
 
+set spell                       " Switches on spell checking
 set number                      " Line numbers are good
 set backspace=indent,eol,start  " Allow backspace in insert mode
 set history=1000                " Store lots of :cmdline history
@@ -158,7 +159,7 @@ set pastetoggle=<F2> " For pasting text without indentation
 "set list listchars=tab:\ \ ,trail:Â·
 set listchars=tab:✗\ ,trail:✗,extends:»,precedes:« " Unprintable chars mapping
 
-set nowrap        " No wraping of long lines
+set nowrap        " Don't wrap lines
 set linebreak     " Wrap lines at convenient points
 set showbreak=+++ " Wrap-broken line prefix
 set textwidth=100 " Line wrap (number of cols)
@@ -342,7 +343,4 @@ imap <C-c> <CR><Esc>O
 " Support for github flavored markdown
 " via https://github.com/jtratner/vim-flavored-markdown
 " with .md extensions
-augroup markdown
-    au!
-    au BufNewFile,BufRead *.md,*.markdown setlocal filetype=ghmarkdown
-augroup END
+au BufNewFile,BufRead *.markdown,*.mdown,*.mkd,*.mkdn,*.mdwn,*.md  set ft=markdown
