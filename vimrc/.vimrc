@@ -58,6 +58,9 @@ Plug 'ternjs/tern_for_vim'
 Plug 'pangloss/vim-javascript'
 Plug 'jelera/vim-javascript-syntax'
 Plug 'Raimondi/delimitMate'
+Plug 'leafgarland/typescript-vim'
+" Scala:
+Plug 'derekwyatt/vim-scala'
 " Indent Guid:
 Plug 'nathanaelkane/vim-indent-guides'
 " SemanticHighlight:
@@ -273,9 +276,10 @@ let NERDTreeShowHidden=1
 ""==================== clipboard ==========================
 " enable copy to clipboard - commented out
 
-if $TMUX == ''
-    set clipboard+=unnamed
-endif
+"if $TMUX == ''
+    "set clipboard+=unnamed
+"endif
+set clipboard=unnamed
 " copy to clipboard with Ctrl-C
 
 "map <C-x> :!pbcopy<CR>
