@@ -59,6 +59,7 @@ Plug 'pangloss/vim-javascript'
 Plug 'jelera/vim-javascript-syntax'
 Plug 'Raimondi/delimitMate'
 Plug 'leafgarland/typescript-vim'
+Plug 'posva/vim-vue'
 " Scala:
 Plug 'derekwyatt/vim-scala'
 " Indent Guid:
