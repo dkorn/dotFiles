@@ -94,12 +94,21 @@ Plug 'isRuslan/vim-es6', { 'for' : ['javascript', 'json', 'markdown'] }
 Plug 'scrooloose/nerdtree'
 " NerdTree Commenter:
 Plug 'scrooloose/nerdcommenter'
+" JSON:
+Plug 'elzr/vim-json'
+" Whitespaces:
+Plug 'ntpeters/vim-better-whitespace'
 
 call plug#end()
 
 " ====================================================
 " END OF PLUGINS
 " ====================================================
+
+" ============== General Plugin Configs ==============
+
+" strip all trailing whitespace everytime you save the file for file types not in the default blacklist
+autocmd BufEnter * if index(g:better_whitespace_filetypes_blacklist, &ft) < 0 | exec 'EnableStripWhitespaceOnSave' | endif
 
 " ================ General Config ====================
 
@@ -154,7 +163,7 @@ set smartindent   " Enable smart-indent
 set smarttab      " Enable smart-tabs
 set shiftwidth=2  " Number of auto-indent spaces
 set softtabstop=2 " Number of spaces per Tab
-set tabstop=2 
+set tabstop=2
 set expandtab     " Use spaces instead of tabs
 
 set pastetoggle=<F2> " For pasting text without indentation
@@ -297,7 +306,7 @@ set statusline+=%#warningmsg#
 set statusline+=%{ALEGetStatusLine()}
 set statusline+=%*
 
-" ===== SYNTASTIC - commented out for ale 
+" ===== SYNTASTIC - commented out for ale
 "mark syntax errors with :signs
 "let g:syntastic_enable_signs=1
 "automatically jump to the error when saving the file
