@@ -5,7 +5,7 @@ bindkey "^[^[[C" forward-word
 bindkey "^[^[[D" backward-word
 
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/opt/python/libexec/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/danielkorn/.oh-my-zsh
@@ -58,7 +58,7 @@ ZSH_THEME="powerlevel9k/powerlevel9k"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git, fzf-zsh)
+plugins=(git, fzf-zsh, zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -93,6 +93,7 @@ export LC_ALL=en_US.UTF-8
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias pipeline="tmuxp load pipeline"
 alias mikud="echo 6345506"
+alias docker_restart="osascript -e 'quit app \"Docker\"' && open -a Docker"
 
 export BIGPANDADIR="~/git/bigpanda/"
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
@@ -110,3 +111,8 @@ precmd() {
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 source ~/.nvm/nvm.sh
+
+export PATH="$PATH:$HOME/.rvm/bin"
+
+# added by travis gem
+[ -f /Users/danielkorn/.travis/travis.sh ] && source /Users/danielkorn/.travis/travis.sh

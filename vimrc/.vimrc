@@ -112,7 +112,8 @@ autocmd BufEnter * if index(g:better_whitespace_filetypes_blacklist, &ft) < 0 | 
 
 " ================ General Config ====================
 
-set spell                       " Switches on spell checking
+set spell spelllang=en_us       " Switches on spell checking
+set complete+=kspell            " Turn on word completion (CTRL-N or CTRL-P)
 set number                      " Line numbers are good
 set backspace=indent,eol,start  " Allow backspace in insert mode
 set history=1000                " Store lots of :cmdline history
@@ -358,3 +359,6 @@ imap <C-c> <CR><Esc>O
 " via https://github.com/jtratner/vim-flavored-markdown
 " with .md extensions
 au BufNewFile,BufRead *.markdown,*.mdown,*.mkd,*.mkdn,*.mdwn,*.md  set ft=markdown
+
+highlight clear SpellBad
+highlight SpellBad cterm=underline,bold ctermbg=red
