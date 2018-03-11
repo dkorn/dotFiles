@@ -95,7 +95,7 @@ alias pipeline="tmuxp load pipeline"
 alias mikud="echo 6345506"
 alias docker_restart="osascript -e 'quit app \"Docker\"' && open -a Docker"
 
-export BIGPANDADIR="~/git/bigpanda/"
+export BIGPANDADIR="/Users/danielkorn/git/bigpanda"
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 export DISABLE_AUTO_TITLE='true'
 
