@@ -8,6 +8,12 @@ set nocompatible
 " the plugins.
 let mapleader=","
 
+" ============== key mappings  ==============
+
+" Fzf search with arg or word under cursor
+" prerequisite: brew install the_silver_searcher
+nnoremap K :Ag <C-R><C-W><CR>:cw<CR>
+
 " ========================================
 " Vim plug configuration
 " ========================================
@@ -238,17 +244,6 @@ set wildmenu                 " Option menu on the lower bar above the command li
 ""VCS
 :set wildignore+=*/.git/*,*/.hg/*,*/.svn/*
 
-"" Others, currently commented out
-"set wildignore+=*vim/backups*
-"set wildignore+=*sass-cache*
-"set wildignore+=*DS_Store*
-"set wildignore+=vendor/rails/**
-"set wildignore+=vendor/cache/**
-"set wildignore+=*.gem
-"set wildignore+=log/**
-"set wildignore+=tmp/**
-"set wildignore+=*.png,*.jpg,*.gif
-
 " ================ Scrolling ========================
 
 set scroll=0            " set Pg Up/Dn to half screen size
@@ -307,31 +302,6 @@ set statusline+=%#warningmsg#
 set statusline+=%{ALEGetStatusLine()}
 set statusline+=%*
 
-" ===== SYNTASTIC - commented out for ale
-"mark syntax errors with :signs
-"let g:syntastic_enable_signs=1
-"automatically jump to the error when saving the file
-"let g:syntastic_auto_jump=0
-"show the error list automatically
-"let g:syntastic_auto_loc_list=1
-"don't care about warnings
-
-"let g:syntastic_quiet_warnings=0
-"let g:syntastic_check_on_open = 1
-
-"set statusline+=%#warningmsg#
-"set statusline+=%{SyntasticStatuslineFlag()}
-"set statusline+=%*
-
-"let g:syntastic_always_populate_loc_list = 1
-"let g:syntastic_auto_loc_list = 1
-"let g:syntastic_check_on_open = 1
-"let g:syntastic_check_on_wq = 0
-
-" so that syntastic uses .jshintrc files if present - http://stackoverflow.com/questions/28573553/how-can-i-make-syntastic-load-a-different-checker-based-on-existance-of-files-in
-
-"autocmd FileType javascript let b:syntastic_checkers = findfile('.jshintrc', '.;') != '' ? ['jshint'] : ['standard']
-
 " ====== Make tabs be addressable via Apple+1 or 2 or 3, etc
 " Use numbers to pick the tab you want (like iTerm)
 map <silent> <D-1> :tabn 1<cr>
@@ -359,6 +329,8 @@ imap <C-c> <CR><Esc>O
 " via https://github.com/jtratner/vim-flavored-markdown
 " with .md extensions
 au BufNewFile,BufRead *.markdown,*.mdown,*.mkd,*.mkdn,*.mdwn,*.md  set ft=markdown
+
+" ================= spell highlights =================
 
 highlight clear SpellBad
 highlight SpellBad cterm=underline,bold ctermbg=red
