@@ -32,7 +32,7 @@ Plug 'ctrlpvim/ctrlp.vim'
 " Tagbar:
 Plug 'majutsushi/tagbar'
 " Completion:
-Plug 'Valloric/YouCompleteMe'
+Plug 'Valloric/YouCompleteMe', { 'do' : '~/.vim/plugged/YouCompleteMe/install.py  --tern-completer' } "--gocode-completer
 " RoR:
 Plug 'tpope/vim-rails'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -323,6 +323,8 @@ map <Leader>tt <esc>:TagbarToggle<cr>
 
 let g:tern_show_argument_hints='on_hold'
 let g:tern_map_keys=1
+
+let g:ale_linters ={ 'javascript': ['eslint'] }
 
 imap <C-c> <CR><Esc>O
 " Support for github flavored markdown
