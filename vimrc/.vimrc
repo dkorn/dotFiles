@@ -104,6 +104,8 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'elzr/vim-json'
 " Whitespaces:
 Plug 'ntpeters/vim-better-whitespace'
+" Find and Replace
+Plug 'dkprice/vim-easygrep'
 
 call plug#end()
 
@@ -210,7 +212,7 @@ let g:tagbar_type_css = {
 " Python:
 
 " python with virtualenv support
-py << EOF
+py3 << EOF
 import os
 import sys
 if 'VIRTUAL_ENV' in os.environ:

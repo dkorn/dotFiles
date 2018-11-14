@@ -94,6 +94,8 @@ export LC_ALL=en_US.UTF-8
 alias pipeline="tmuxp load pipeline"
 alias mikud="echo 6345506"
 alias docker_restart="osascript -e 'quit app \"Docker\"' && open -a Docker"
+alias mongobp="mongo bigpanda-data-api"
+alias npmi="noti npm install"
 
 export BIGPANDADIR="/Users/danielkorn/git/bigpanda"
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
