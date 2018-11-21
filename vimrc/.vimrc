@@ -327,6 +327,8 @@ let g:tern_show_argument_hints='on_hold'
 let g:tern_map_keys=1
 
 let g:ale_linters ={ 'javascript': ['eslint'] }
+nmap <silent> <leader>ln :ALENextWrap<cr>
+nmap <silent> <leader>lp :ALEPreviousWrap<cr>
 
 imap <C-c> <CR><Esc>O
 " Support for github flavored markdown
