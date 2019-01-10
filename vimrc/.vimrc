@@ -300,9 +300,7 @@ set clipboard=unnamed
 
 "==================== my plugin configs ===================
 
-set statusline+=%#warningmsg#
-set statusline+=%{ALEGetStatusLine()}
-set statusline+=%*
+let g:airline#extensions#ale#enabled = 1
 
 " ====== Make tabs be addressable via Apple+1 or 2 or 3, etc
 " Use numbers to pick the tab you want (like iTerm)
