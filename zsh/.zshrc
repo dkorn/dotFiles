@@ -58,7 +58,7 @@ ZSH_THEME="powerlevel9k/powerlevel9k"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git, fzf-zsh, zsh-autosuggestions, kubectl)
+plugins=(git, fzf-zsh, kubectl, zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -97,6 +97,7 @@ alias docker_restart="osascript -e 'quit app \"Docker\"' && open -a Docker"
 alias mongobp="mongo bigpanda-data-api"
 alias npmi="noti npm install"
 alias k="kubectl"
+alias git="hub"
 
 export BIGPANDADIR="/Users/danielkorn/git/bigpanda"
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
@@ -113,7 +114,9 @@ precmd() {
 
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+source /usr/local/etc/profile.d/z.sh
 source ~/.nvm/nvm.sh
+source ~/.secrets
 
 export PATH="$PATH:$HOME/.rvm/bin"
 
