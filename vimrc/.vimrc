@@ -84,8 +84,8 @@ Plug 'w0rp/ale'
 Plug 'junegunn/fzf'
 " Editorconfig:
 Plug 'editorconfig/editorconfig-vim'
-" Solarized:
-Plug 'lifepillar/vim-solarized8'
+" Dracula:
+Plug 'dracula/vim', { 'as': 'dracula' }
 " Stylus:
 Plug 'wavded/vim-stylus', { 'for': ['stylus', 'markdown'] }
 " Pug:
@@ -258,14 +258,13 @@ set sidescroll=1
 set t_Co=256
 syntax enable
 set background=dark
-colorscheme solarized
-color solarized
+colorscheme dracula
 
 " =============== NERDTree Mappins =====================
 " Open Nerd Tree with Ctrl+n
 map <C-n> :NERDTreeToggle<CR>
 
-" Reveal current file in NERDTree with Ctrl+r
+" Reveal current file in NERDTree with Ctrl+f
 map <C-f> :NERDTreeFind<CR>
 
 " Autoload NERDTree if no file specified
@@ -280,6 +279,8 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 " Show hidden files in NERDTree
 
 let NERDTreeShowHidden=1
+let g:NERDTreeDirArrowExpandable = '▸'
+let g:NERDTreeDirArrowCollapsible = '▾'
 
 ""==================== clipboard ==========================
 " enable copy to clipboard - commented out
