@@ -96,13 +96,16 @@ export LC_ALL=en_US.UTF-8
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias pipeline="tmuxp load pipeline"
-alias mikud="echo 6345506"
+alias bp_mikud="echo 6721707"
 alias docker_restart="osascript -e 'quit app \"Docker\"' && open -a Docker"
 alias mongobp="mongo bigpanda-data-api"
 alias npmi="noti npm install"
 alias k="kubectl"
 alias git="hub"
-
+alias restart="sudo shutdown -r now"
+alias shutdown="sudo shutdown -h now"
+alias sleep="sudo shutdown -s now"
+alias zoom="echo https://bigpanda.zoom.us/my/dkorn"
 export BIGPANDADIR="/Users/danielkorn/git/bigpanda"
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 export DISABLE_AUTO_TITLE='true'

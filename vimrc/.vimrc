@@ -14,6 +14,20 @@ let mapleader=","
 " prerequisite: brew install the_silver_searcher
 nnoremap K :Ag <C-R><C-W><CR>:cw<CR>
 
+" ===========================================
+"
+" Toggle spellchecking
+function! ToggleSpellCheck()
+  set spell!
+  if &spell
+    echo "Spellcheck ON"
+  else
+    echo "Spellcheck OFF"
+  endif
+endfunction
+
+nnoremap <silent> <Leader>S :call ToggleSpellCheck()<CR>
+
 " ========================================
 " Vim plug configuration
 " ========================================
@@ -106,6 +120,8 @@ Plug 'elzr/vim-json'
 Plug 'ntpeters/vim-better-whitespace'
 " Find and Replace
 Plug 'dkprice/vim-easygrep'
+Plug 'stephpy/vim-yaml'
+Plug 'plasticboy/vim-markdown'
 
 call plug#end()
 
@@ -303,6 +319,8 @@ set clipboard=unnamed
 
 let g:airline#extensions#ale#enabled = 1
 
+let g:vim_markdown_folding_disabled = 1
+
 " ====== Make tabs be addressable via Apple+1 or 2 or 3, etc
 " Use numbers to pick the tab you want (like iTerm)
 map <silent> <D-1> :tabn 1<cr>
@@ -325,7 +343,9 @@ map <Leader>tt <esc>:TagbarToggle<cr>
 let g:tern_show_argument_hints='on_hold'
 let g:tern_map_keys=1
 
-let g:ale_linters ={ 'javascript': ['eslint'] }
+" ====================== ALE =============================
+
+let g:ale_linters ={ 'javascript': ['eslint'], 'jsx': ['eslint'] }
 nmap <silent> <leader>ln :ALENextWrap<cr>
 nmap <silent> <leader>lp :ALEPreviousWrap<cr>
 
